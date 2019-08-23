@@ -1,0 +1,17 @@
+Please find attached a file called PF00167_full.txt. This is an alignment file for the Fibroblast Growth Factor. The first column has the organism from which the sequence is obtained and the second column is the alignment of the sequences.
+
+A consensus sequence is obtained by choosing the most frequently occurring amino acid at a position from a sequence alignment. In case of equal frequency, consider the one closer to the start of the alphabet (for the purposes of this exercise).
+
+I would like you to try the following:
+
+1a. Calculate a consensus from the aligned sequences. Consider the dashes to be amino acids (don't eliminate them in any way). Your consensus sequence should have a lot of dashes. Print out the consensus sequence.
+1b. Report the length of the consensus calculated in 1a (should be = 389).
+
+2a. Calculate a consensus again but this time, only consider positions that have an amino acid as the highest frequency element (not a dash). Your consensus sequence, in this case, should not have any dashes in it.
+2b. Report the length of the consensus calculated in 2a. It should also be much shorter than 1b.
+
+3a. Calculate a consensus again but this time in a more complicated manner. If the highest frequency element in a position is an amino acid, take it to be a part of the consensus. If the highest frequency element in a position is a dash BUT the frequency of the dash is less than 50%, take the highest frequency amino acid instead. In other words, the only rejected positions are the ones where a dash is the highest frequency element and occurs with >50% frequency.
+3b. Report the length of the consensus calculated in 3a. This should be longer than 2a but shorter than 1a.
+
+4. Identify the position in the alignment that has the most dashes. In this position, identify the sequences that do not have a dash. I call these "bad sequences" since to accommodate them, the alignment needs to be lengthened by adding dashes. Identify these sequences (names are in the first column of the file).
+This is explained pictorially in the attached figure.
