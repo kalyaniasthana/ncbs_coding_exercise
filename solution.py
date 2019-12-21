@@ -1,6 +1,7 @@
 
 amino_acids = 'ACDEFGHIKLMNPQRSTVWXY'
-amino_acids = list(amino_acids) + ['-']
+amino_acids = ['-'] + list(amino_acids) 
+import sys 
 
 def input_sequences(file):
 	sequences = []
@@ -30,25 +31,24 @@ def consensus(x, sequences, sequences_with_name, amino_acids, pseudocount = 0):
 	sequence_length = len(sequences[0])
 	profile_matrix = {}
 	for acid in amino_acids:
-		profile_matrix[acid] = [pseudocount for i in range(sequence_length)]
+		profile_matrix[acid] = [float(pseudocount) for i in range(sequence_length)]
 	
 	for i in range(len(sequences)):
 		seq = sequences[i]
 		for j in range(len(seq)):
 			#print(i, j)
-			profile_matrix[seq[j]][j] += 1
+			profile_matrix[seq[j]][j] += float(1)
 
 	for aa in profile_matrix:
 		l = profile_matrix[aa]
 		for i in range(len(l)):
 			if pseudocount > 0:
-				l[i] /= (len(sequences)*2)
+				l[i] /= float((len(sequences)*2))
 			else:
-				l[i] /= len(sequences)
+				l[i] /= float(len(sequences))
 
 	consensus_string = ''
-
-
+	
 	if x == 7:
 		#identifying the position in the alignment which has the most dashes
 		max_value = max(profile_matrix['-'])
